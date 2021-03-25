@@ -1,4 +1,4 @@
-package com.lambdaschool.sampleemps.config;
+package com.lambdaschool.shoppingcart.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -65,8 +65,6 @@ public class ResourceServerConfig
             .antMatchers("/oauth/revoke-token",
                 "/logout")
             .authenticated()
-            .antMatchers("/employees/**")
-            .hasAnyRole("USER")
             .antMatchers("/users/**")
             .hasAnyRole("ADMIN")
             .anyRequest().denyAll() // deny any endpoint that is not explicitly given access rights

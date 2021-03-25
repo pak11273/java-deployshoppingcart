@@ -1,4 +1,4 @@
-package com.lambdaschool.sampleemps.config;
+package com.lambdaschool.shoppingcart.config;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -17,9 +17,7 @@ import java.io.IOException;
  */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
-public class SimpleCorsFilter
-    implements Filter
-{
+public class SimpleCorsFilter implements Filter {
     @Override
     public void doFilter(
         ServletRequest servletRequest,

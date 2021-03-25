@@ -1,4 +1,4 @@
-package com.lambdaschool.sampleemps.models;
+package com.lambdaschool.shoppingcart.models;
 
 import javax.persistence.Embeddable;
 import java.io.Serializable;

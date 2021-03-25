@@ -1,6 +1,6 @@
-package com.lambdaschool.sampleemps.services;
+package com.lambdaschool.shoppingcart.services;
 
-import com.lambdaschool.sampleemps.models.ValidationError;
+import com.lambdaschool.shoppingcart.models.ValidationError;
 
 import java.util.List;
 

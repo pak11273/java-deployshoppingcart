@@ -1,4 +1,4 @@
-package com.lambdaschool.sampleemps.models;
+package com.lambdaschool.shoppingcart.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -12,8 +12,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "roles")
-public class Role
-    extends Auditable
+public class Role extends Auditable
 {
     /**
      * The primary key (long) of the roles table.

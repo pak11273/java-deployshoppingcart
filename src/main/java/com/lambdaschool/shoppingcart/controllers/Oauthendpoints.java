@@ -1,10 +1,10 @@
-package com.lambdaschool.sampleemps.controllers;
+package com.lambdaschool.shoppingcart.controllers;
 
-import com.lambdaschool.sampleemps.models.User;
-import com.lambdaschool.sampleemps.models.UserMinimum;
-import com.lambdaschool.sampleemps.models.UserRoles;
-import com.lambdaschool.sampleemps.services.RoleService;
-import com.lambdaschool.sampleemps.services.UserService;
+import com.lambdaschool.shoppingcart.models.User;
+import com.lambdaschool.shoppingcart.models.UserMinimum;
+import com.lambdaschool.shoppingcart.models.UserRoles;
+import com.lambdaschool.shoppingcart.services.RoleService;
+import com.lambdaschool.shoppingcart.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
@@ -79,8 +79,7 @@ public class Oauthendpoints
 
         // add the default role of user
         Set<UserRoles> newRoles = new HashSet<>();
-        newRoles.add(new UserRoles(newuser,
-            roleService.findByName("USER")));
+        newRoles.add(new UserRoles(newuser, roleService.findByName("USER")));
         newuser.setRoles(newRoles);
 
         newuser = userService.save(newuser);

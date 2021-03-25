@@ -1,23 +1,16 @@
-package com.lambdaschool.sampleemps.services;
+package com.lambdaschool.shoppingcart.services;
 
-import com.lambdaschool.sampleemps.exceptions.ResourceNotFoundException;
-import com.lambdaschool.sampleemps.models.Role;
-import com.lambdaschool.sampleemps.repositories.RoleRepository;
+import com.lambdaschool.shoppingcart.exceptions.ResourceNotFoundException;
+import com.lambdaschool.shoppingcart.models.Role;
+import com.lambdaschool.shoppingcart.repositories.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Implements the RoleService Interface
- */
 @Transactional
 @Service(value = "roleService")
-public class RoleServiceImpl
-    implements RoleService
+public class RoleServiceImpl implements RoleService
 {
-    /**
-     * Connects this service to the Role Model
-     */
     @Autowired
     RoleRepository rolerepos;
 
@@ -26,12 +19,19 @@ public class RoleServiceImpl
     {
         Role rr = rolerepos.findByName(name);
 
-        if (rr != null)
+        if (rr != null)  return rr;
+        throw new ResourceNotFoundException(name);
+    }
+
+    @Transactional
+    @Override
+    public Role save(Role role)
+    {
+        if (role.getUsers() .size() > 0)
         {
-            return rr;
-        } else
-        {
-            throw new ResourceNotFoundException(name);
+            throw new ResourceNotFoundException("User Roles are not updated through Role.");
         }
+
+        return rolerepos.save(role);
     }
 }

@@ -1,4 +1,4 @@
-package com.lambdaschool.sampleemps.services;
+package com.lambdaschool.shoppingcart.services;
 
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;

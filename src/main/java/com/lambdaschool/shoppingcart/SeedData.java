@@ -1,10 +1,12 @@
 package com.lambdaschool.shoppingcart;
 
+//import com.lambdaschool.shoppingcart.models.Product;
 import com.lambdaschool.shoppingcart.models.Product;
 import com.lambdaschool.shoppingcart.models.Role;
 import com.lambdaschool.shoppingcart.models.User;
 import com.lambdaschool.shoppingcart.models.UserRoles;
 import com.lambdaschool.shoppingcart.services.CartItemService;
+//import com.lambdaschool.shoppingcart.services.ProductService;
 import com.lambdaschool.shoppingcart.services.ProductService;
 import com.lambdaschool.shoppingcart.services.RoleService;
 import com.lambdaschool.shoppingcart.services.UserService;
@@ -58,11 +60,11 @@ public class SeedData
     public void run(String[] args) throws
             Exception
     {
-        // Adding users
+//         Adding users
 
-        userService.deleteAll();
-        roleService.deleteAll();
-        productService.deleteAll();
+//        userService.deleteAll();
+//        roleService.deleteAll();
+//        productService.deleteAll();
 
 //        System.out.println("Users: " + userService.findAll().size());
 //        System.out.println("Roles: " + roleService.findAll().size());
@@ -74,36 +76,19 @@ public class SeedData
         r1 = roleService.save(r1);
         r2 = roleService.save(r2);
 
-        User u1 = new User("barnbarn",
-                "LambdaLlama",
-                "barnbarn@host.local",
-                "added via seed data");
-        u1.getRoles()
-                .add(new UserRoles(u1,
-                        r1));
-        u1.getRoles()
-                .add(new UserRoles(u1,
-                        r2));
+        User u1 = new User("barnbarn", "LambdaLlama", "barnbarn@host.local", "added via seed data");
+        u1.getRoles().add(new UserRoles(u1, r1));
+        u1.getRoles().add(new UserRoles(u1, r2));
 
         u1 = userService.save(u1);
 
-        User u2 = new User("cinnamon",
-                "LambdaLlama",
-                "cinnamon@host.local",
-                "added via seed data");
-        u2.getRoles()
-                .add(new UserRoles(u2,
-                        r2));
+        User u2 = new User("cinnamon", "LambdaLlama", "cinnamon@host.local", "added via seed data");
+        u2.getRoles().add(new UserRoles(u2, r2));
 
         u2 = userService.save(u2);
 
-        User u3 = new User("stumps",
-                "LambdaLlama",
-                "stumps@host.local",
-                "added via seed data");
-        u3.getRoles()
-                .add(new UserRoles(u3,
-                        r2));
+        User u3 = new User("stumps", "LambdaLlama", "stumps@host.local", "added via seed data");
+        u3.getRoles().add(new UserRoles(u3, r2));
 
         u3 = userService.save(u3);
 
@@ -134,37 +119,27 @@ public class SeedData
         // Creating Carts
         for (int i = 0; i < 4; i++)
         {
-            cartItemService.addToCart(u1.getUserid(),
-                    p1.getProductid(),
-                    "added via seed data");
+            cartItemService.addToCart(u1.getUserid(), p1.getProductid(), "added via seed data");
         }
 
         for (int i = 0; i < 3; i++)
         {
-            cartItemService.addToCart(u1.getUserid(),
-                    p2.getProductid(),
-                    "added via seed data");
+            cartItemService.addToCart(u1.getUserid(), p2.getProductid(), "added via seed data");
         }
 
         for (int i = 0; i < 2; i++)
         {
-            cartItemService.addToCart(u1.getUserid(),
-                    p3.getProductid(),
-                    "added via seed data");
+            cartItemService.addToCart(u1.getUserid(), p3.getProductid(), "added via seed data");
         }
 
         for (int i = 0; i < 1; i++)
         {
-            cartItemService.addToCart(u2.getUserid(),
-                    p3.getProductid(),
-                    "added via seed data");
+            cartItemService.addToCart(u2.getUserid(), p3.getProductid(), "added via seed data");
         }
 
         for (int i = 0; i < 17; i++)
         {
-            cartItemService.addToCart(u3.getUserid(),
-                    p3.getProductid(),
-                    "added via seed data");
+            cartItemService.addToCart(u3.getUserid(), p3.getProductid(), "added via seed data");
         }
 
     }

@@ -1,4 +1,4 @@
-package com.lambdaschool.sampleemps.config;
+package com.lambdaschool.shoppingcart.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,7 +32,7 @@ public class Swagger2Config
         return new Docket(DocumentationType.SWAGGER_2)
             .select()
             .apis(RequestHandlerSelectors
-                .basePackage("com.lambdaschool.sampleemps"))
+                .basePackage("com.lambdaschool.shoppingcart"))
             .paths(PathSelectors.regex("/.*"))
             .build()
             .apiInfo(apiEndPointsInfo());
@@ -40,13 +40,13 @@ public class Swagger2Config
 
     private ApiInfo apiEndPointsInfo()
     {
-        return new ApiInfoBuilder().title("Sample Employees Project")
+        return new ApiInfoBuilder().title("Sample Shopping Cart Project")
             .description("A Project Used to Introduce Swagger Documentation")
             .contact(new Contact("John Mitchell",
                 "http://www.lambdaschool.com",
                 "john@lambdaschool.com"))
             .license("MIT")
-            .licenseUrl("https://github.com/LambdaSchool/java-sampleemps/blob/master/LICENSE")
+            .licenseUrl("https://github.com/LambdaSchool/shoppingcart/blob/master/LICENSE")
             .version("1.0.0")
             .build();
     }

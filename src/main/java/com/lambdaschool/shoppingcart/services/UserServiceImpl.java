@@ -1,26 +1,19 @@
-package com.lambdaschool.sampleemps.services;
+package com.lambdaschool.shoppingcart.services;
 
-import com.lambdaschool.sampleemps.exceptions.ResourceNotFoundException;
-import com.lambdaschool.sampleemps.models.Role;
-import com.lambdaschool.sampleemps.models.User;
-import com.lambdaschool.sampleemps.models.UserRoles;
-import com.lambdaschool.sampleemps.repositories.RoleRepository;
-import com.lambdaschool.sampleemps.repositories.UserRepository;
+import com.lambdaschool.shoppingcart.exceptions.ResourceNotFoundException;
+import com.lambdaschool.shoppingcart.models.Role;
+import com.lambdaschool.shoppingcart.models.User;
+import com.lambdaschool.shoppingcart.models.UserRoles;
+import com.lambdaschool.shoppingcart.repositories.RoleRepository;
+import com.lambdaschool.shoppingcart.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Implements UserService Interface
- */
 @Transactional
 @Service(value = "userService")
-public class UserServiceImpl
-    implements UserService
+public class UserServiceImpl implements UserService
 {
-    /**
-     * Connects this service to the User table.
-     */
     @Autowired
     private UserRepository userrepos;
 
@@ -45,17 +38,14 @@ public class UserServiceImpl
 
         if (user.getUserid() != 0)
         {
-            userrepos.findById(user.getUserid())
-                .orElseThrow(() -> new ResourceNotFoundException("User id " + user.getUserid() + " not found!"));
+            userrepos.findById(user.getUserid()).orElseThrow(() -> new ResourceNotFoundException("User id " + user.getUserid() + " not found!"));
             newUser.setUserid(user.getUserid());
         }
 
-        newUser.setUsername(user.getUsername()
-            .toLowerCase());
+        newUser.setUsername(user.getUsername().toLowerCase());
         newUser.setPasswordNoEncrypt(user.getPassword());
 
-        newUser.getRoles()
-            .clear();
+        newUser.getRoles().clear();
         for (UserRoles ur : user.getRoles())
         {
             Role addRole = rolerepos.findById(ur.getRole()
@@ -67,6 +57,9 @@ public class UserServiceImpl
                 .add(new UserRoles(newUser,
                     addRole));
         }
+
+        newUser.setPrimaryemail(user.getPrimaryemail());
+        newUser.setComments(user.getComments());
 
         return userrepos.save(newUser);
     }

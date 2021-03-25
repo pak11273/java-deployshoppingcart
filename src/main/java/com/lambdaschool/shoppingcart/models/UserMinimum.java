@@ -1,4 +1,4 @@
-package com.lambdaschool.sampleemps.models;
+package com.lambdaschool.shoppingcart.models;
 
 /**
  * A model used to create a new user. The minimum information needed to create a user.

@@ -1,4 +1,4 @@
-package com.lambdaschool.sampleemps.models;
+package com.lambdaschool.shoppingcart.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

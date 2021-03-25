@@ -1,4 +1,4 @@
-package com.lambdaschool.sampleemps.exceptions;
+package com.lambdaschool.shoppingcart.exceptions;
 
 public class ResourceNotFoundException
     extends RuntimeException

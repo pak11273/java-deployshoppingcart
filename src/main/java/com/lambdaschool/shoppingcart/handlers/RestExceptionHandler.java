@@ -1,8 +1,8 @@
-package com.lambdaschool.sampleemps.handlers;
+package com.lambdaschool.shoppingcart.handlers;
 
-import com.lambdaschool.sampleemps.exceptions.ResourceNotFoundException;
-import com.lambdaschool.sampleemps.models.ErrorDetail;
-import com.lambdaschool.sampleemps.services.HelperFunctions;
+import com.lambdaschool.shoppingcart.exceptions.ResourceNotFoundException;
+import com.lambdaschool.shoppingcart.models.ErrorDetail;
+import com.lambdaschool.shoppingcart.services.HelperFunctions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

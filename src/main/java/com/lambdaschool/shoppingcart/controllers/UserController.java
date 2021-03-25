@@ -1,7 +1,7 @@
-package com.lambdaschool.sampleemps.controllers;
+package com.lambdaschool.shoppingcart.controllers;
 
-import com.lambdaschool.sampleemps.models.User;
-import com.lambdaschool.sampleemps.services.UserService;
+import com.lambdaschool.shoppingcart.models.User;
+import com.lambdaschool.shoppingcart.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

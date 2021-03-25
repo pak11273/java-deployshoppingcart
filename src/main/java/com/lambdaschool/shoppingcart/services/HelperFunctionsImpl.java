@@ -1,6 +1,6 @@
-package com.lambdaschool.sampleemps.services;
+package com.lambdaschool.shoppingcart.services;
 
-import com.lambdaschool.sampleemps.models.ValidationError;
+import com.lambdaschool.shoppingcart.models.ValidationError;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.FieldError;
