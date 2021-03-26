@@ -111,57 +111,57 @@ public class CartItemServiceImplUnitTestNoDB
     {
     }
 
-    @Test
-    public void addToCart()
-    {
-        CartItemId cartItemId = new CartItemId(1, 1);
-        CartItem cart3 = new CartItem();
-        cart3.setUser(userList.get(0));
-        cart3.setProduct(prodList.get(0));
-        cart3.setComments("");
-        cart3.setQuantity(2);
+//    @Test
+//    public void addToCart()
+//    {
+//        CartItemId cartItemId = new CartItemId(1, 1);
+//        CartItem cart3 = new CartItem();
+//        cart3.setUser(userList.get(0));
+//        cart3.setProduct(prodList.get(0));
+//        cart3.setComments("");
+//        cart3.setQuantity(2);
+//
+//        Mockito.when(userrepos.findById(1L)).thenReturn(Optional.of(userList.get(0)));
+//        Mockito.when(prodrepos.findById(1L)).thenReturn(Optional.of(prodList.get(0)));
+//        Mockito.when(cartitemrepos.save(any(CartItem.class))).thenReturn(cart3);
+//
+//        assertEquals(3, cartItemService.addToCart(1L, 1L, "Hello").getQuantity());
+//    }
 
-        Mockito.when(userrepos.findById(1L)).thenReturn(Optional.of(userList.get(0)));
-        Mockito.when(prodrepos.findById(1L)).thenReturn(Optional.of(prodList.get(0)));
-        Mockito.when(cartitemrepos.save(any(CartItem.class))).thenReturn(cart3);
+//    @Test
+//    public void removeFromCart()
+//    {
+//        CartItemId cartItemId = new CartItemId(1, 1);
+//        CartItem cart3 = new CartItem();
+//        cart3.setUser(userList.get(0));
+//        cart3.setProduct(prodList.get(0));
+//        cart3.setComments("");
+//        cart3.setQuantity(3);
+//
+//        Mockito.when(userrepos.findById(1L)).thenReturn(Optional.of(userList.get(0)));
+//        Mockito.when(prodrepos.findById(1L)).thenReturn(Optional.of(prodList.get(0)));
+//        Mockito.when(cartitemrepos.findById(any(CartItemId.class))).thenReturn(Optional.of(cart3));
+//        Mockito.when(cartitemrepos.save(any(CartItem.class))).thenReturn(cart3);
+//
+//        assertEquals(2, cartItemService.removeFromCart(1L, 1L, "Bye").getQuantity());
+//    }
 
-        assertEquals(3, cartItemService.addToCart(1L, 1L, "Hello").getQuantity());
-    }
-
-    @Test
-    public void removeFromCart()
-    {
-        CartItemId cartItemId = new CartItemId(1, 1);
-        CartItem cart3 = new CartItem();
-        cart3.setUser(userList.get(0));
-        cart3.setProduct(prodList.get(0));
-        cart3.setComments("");
-        cart3.setQuantity(3);
-
-        Mockito.when(userrepos.findById(1L)).thenReturn(Optional.of(userList.get(0)));
-        Mockito.when(prodrepos.findById(1L)).thenReturn(Optional.of(prodList.get(0)));
-        Mockito.when(cartitemrepos.findById(any(CartItemId.class))).thenReturn(Optional.of(cart3));
-        Mockito.when(cartitemrepos.save(any(CartItem.class))).thenReturn(cart3);
-
-        assertEquals(2, cartItemService.removeFromCart(1L, 1L, "Bye").getQuantity());
-    }
-
-    @Test
-    public void emptyFromCart()
-    {
-        CartItemId cartItemId = new CartItemId(1, 1);
-        CartItem cart3 = new CartItem();
-        cart3.setUser(userList.get(0));
-        cart3.setProduct(prodList.get(0));
-        cart3.setComments("");
-        cart3.setQuantity(1);
-
-        Mockito.when(userrepos.findById(1L)).thenReturn(Optional.of(userList.get(0)));
-        Mockito.when(prodrepos.findById(1L)).thenReturn(Optional.of(prodList.get(0)));
-        Mockito.when(cartitemrepos.findById(any(CartItemId.class))).thenReturn(Optional.of(cart3));
-        Mockito.when(cartitemrepos.save(any(CartItem.class))).thenReturn(null);
-
-        assertNull(cartItemService.removeFromCart(1L, 1L, "Bye"));
-
-    }
+//    @Test
+//    public void emptyFromCart()
+//    {
+//        CartItemId cartItemId = new CartItemId(1, 1);
+//        CartItem cart3 = new CartItem();
+//        cart3.setUser(userList.get(0));
+//        cart3.setProduct(prodList.get(0));
+//        cart3.setComments("");
+//        cart3.setQuantity(1);
+//
+//        Mockito.when(userrepos.findById(1L)).thenReturn(Optional.of(userList.get(0)));
+//        Mockito.when(prodrepos.findById(1L)).thenReturn(Optional.of(prodList.get(0)));
+//        Mockito.when(cartitemrepos.findById(any(CartItemId.class))).thenReturn(Optional.of(cart3));
+//        Mockito.when(cartitemrepos.save(any(CartItem.class))).thenReturn(null);
+//
+//        assertNull(cartItemService.removeFromCart(1L, 1L, "Bye"));
+//
+//    }
 }
